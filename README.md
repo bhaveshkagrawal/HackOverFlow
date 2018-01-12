@@ -43,7 +43,7 @@ From the HackOverFlow source directory:
     pip install --upgrade -r conf/requirements/base.txt
 
     # Initialize database, import test data, index for searching and run the server.
-    ./biostar.sh init import index run
+    ./hackOverFlow.sh init import index run
 
 Visit `http://www.lvh.me:8080` to see the site loaded with demo data.
 
@@ -58,25 +58,3 @@ The user with the email `1@lvh.me` has staff level permissions and
 can also access the admin interface at `http://www.lvh.me:8080/admin/`.
 
 Enjoy.
-
-### Development
-
-Biostar versions and upgrade path: https://github.com/ialbert/biostar-central/issues/400
-
-### Support
-
-We may be able to provide support for organizations or institutions. 
-For more information contact **admin@biostars.org**
-
-[django]: http://www.djangoproject.com/
-[python]: http://www.python.org/
-
-### Citing
-
-* Parnell LD, Lindenbaum P, Shameer K, Dall'Olio GM, Swan DC, et al.
-  [2011 BioStar: An Online Question & Answer Resource for the Bioinformatics Community.] (http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1002216)
-  PLoS Comput Biol 7(10): e1002216. doi:10.1371/journal.pcbi.1002216
-
-### Contributors
-
-List of contributors: https://github.com/ialbert/biostar-central/graphs/contributors

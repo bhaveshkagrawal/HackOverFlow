@@ -77,7 +77,7 @@ def abspath(*args):
 __THIS_DIR = os.path.split(__file__)[0]
 __DEFAULT_HOME = abspath(__THIS_DIR, "..", "..")
 __DEFAULT_DATABASE_NAME = 'default.db'
-__DEFAULT_BIOSTAR_ADMIN_NAME = "Biostar Admin"
+__DEFAULT_BIOSTAR_ADMIN_NAME = "HackOverFlow Admin"
 __DEFAULT_BIOSTAR_ADMIN_EMAIL = "admin@lvh.me"
 __DEFAULT_SECRET_KEY = 'admin@lvh.me'
 __DEFAULT_SITE_DOMAIN = 'www.lvh.me'
@@ -552,4 +552,5 @@ if __name__ == '__main__':
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'biostar.mailer.CeleryEmailBackend'
 CELERY_EMAIL_BACKEND = 'biostar.mailer.SSLEmailBackend'
-
+AWS_ACCESS_KEY_ID = 'FZINISSZ3542DPIO32CQ'
+AWS_SECRET_ACCESS_KEY = '3Nto4vknl+xeZR+1tF3L645EUyOS+zZy/uPJ1rN'   

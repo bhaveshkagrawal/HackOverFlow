@@ -57,7 +57,7 @@ have default values. Export an environment variable with the given name to
 override a setting. Default values:
 
     DJANGO_SETTINGS_MODULE = biostar.settings.base
-    BIOSTAR_ADMIN_NAME = Biostar Admin
+    BIOSTAR_ADMIN_NAME = HackoverFlow Admin
     BIOSTAR_ADMIN_EMAIL = admin@lvh.me
     SECRET_KEY = admin@lvh.me
     EMAIL_HOST = localhost
