@@ -521,13 +521,21 @@ SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 SESSION_KEY = "session"
 
 # Use a mock email backend for development.
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # On deployed servers the following must be set.
-EMAIL_HOST = get_env("EMAIL_HOST", "localhost")
+EMAIL_HOST = get_env("EMAIL_HOST", "email-smtp.us-west-2.amazonaws.com")
 EMAIL_PORT = get_env("EMAIL_PORT", default=25, func=int)
-EMAIL_HOST_USER = get_env("EMAIL_HOST_USER", "postmaster")
-EMAIL_HOST_PASSWORD = get_env("EMAIL_HOST_PASSWORD", "password")
+EMAIL_HOST_USER = get_env("EMAIL_HOST_USER", "AKIAJ4V55W5CWZH3ZA7Q")
+EMAIL_HOST_PASSWORD = get_env("EMAIL_HOST_PASSWORD", "AltnewcJBBPUYDHJ/MryIzEYnuzJmUZYMgYLKoNLEase")
+
+
+# Amazon SES email sent asynchronously.
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'biostar.mailer.CeleryEmailBackend'
+CELERY_EMAIL_BACKEND = 'biostar.mailer.SSLEmailBackend'
+
+
 
 DJANGO_SETTINGS_MODULE = get_env('DJANGO_SETTINGS_MODULE', 'biostar.settings.base')
 
