@@ -373,12 +373,12 @@ TRUST_RANGE_DAYS = 7
 TRUST_VOTE_COUNT = 5
 
 # How many non top level posts per day for users.
-MAX_POSTS_NEW_USER = 5
-MAX_POSTS_TRUSTED_USER = 30
+MAX_POSTS_NEW_USER = 500
+MAX_POSTS_TRUSTED_USER = 500
 
 # How many top level posts per day for a new user.
-MAX_TOP_POSTS_NEW_USER = 2
-MAX_TOP_POSTS_TRUSTED_USER = 5
+MAX_TOP_POSTS_NEW_USER = 500
+MAX_TOP_POSTS_TRUSTED_USER = 500
 
 SOCIALACCOUNT_ADAPTER = 'biostar.server.middleware.AutoSignupAdapter'
 
