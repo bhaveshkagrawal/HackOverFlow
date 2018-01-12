@@ -1,4 +1,4 @@
-## Biostar: Building Scientific Communities
+## HackOverFlow: Building Scientific Communities
 
 [![Build Status][build-image]][build-url] 
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
