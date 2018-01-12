@@ -367,18 +367,18 @@ ACCOUNT_CONFIRM_EMAIL_ON_GET = True
 CAPTCHA = True
 
 # For how long does a user need to be a member to become trusted.
-TRUST_RANGE_DAYS = 7
+TRUST_RANGE_DAYS = 2
 
 # Votes needed to start trusting the user
-TRUST_VOTE_COUNT = 5
+TRUST_VOTE_COUNT = 2
 
 # How many non top level posts per day for users.
-MAX_POSTS_NEW_USER = 5
-MAX_POSTS_TRUSTED_USER = 30
+MAX_POSTS_NEW_USER = 500
+MAX_POSTS_TRUSTED_USER = 500
 
 # How many top level posts per day for a new user.
-MAX_TOP_POSTS_NEW_USER = 2
-MAX_TOP_POSTS_TRUSTED_USER = 5
+MAX_TOP_POSTS_NEW_USER = 500
+MAX_TOP_POSTS_TRUSTED_USER = 500
 
 SOCIALACCOUNT_ADAPTER = 'biostar.server.middleware.AutoSignupAdapter'
 
@@ -440,7 +440,7 @@ RECENT_USER_COUNT = 7
 RECENT_POST_COUNT = 12
 
 # Time between two accesses from the same IP to qualify as a different view.
-POST_VIEW_MINUTES = 5
+POST_VIEW_MINUTES = 1
 
 # Default  expiration in seconds.
 CACHE_TIMEOUT = 60
@@ -488,7 +488,7 @@ EXTERNAL_SESSION_FIELDS = "title tag_val content".split()
 COUNT_INTERVAL_WEEKS = 10000
 
 # How frequently do we update the counts for authenticated users.
-SESSION_UPDATE_SECONDS = 10 * 60
+SESSION_UPDATE_SECONDS = 2 * 60
 SESSION_COOKIE_NAME = "biostar2"
 
 # The number of posts to show per page.
@@ -521,13 +521,21 @@ SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 SESSION_KEY = "session"
 
 # Use a mock email backend for development.
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # On deployed servers the following must be set.
-EMAIL_HOST = get_env("EMAIL_HOST", "localhost")
+EMAIL_HOST = get_env("EMAIL_HOST", "email-smtp.us-west-2.amazonaws.com")
 EMAIL_PORT = get_env("EMAIL_PORT", default=25, func=int)
-EMAIL_HOST_USER = get_env("EMAIL_HOST_USER", "postmaster")
-EMAIL_HOST_PASSWORD = get_env("EMAIL_HOST_PASSWORD", "password")
+EMAIL_HOST_USER = get_env("EMAIL_HOST_USER", "AKIAJ4V55W5CWZH3ZA7Q")
+EMAIL_HOST_PASSWORD = get_env("EMAIL_HOST_PASSWORD", "AltnewcJBBPUYDHJ/MryIzEYnuzJmUZYMgYLKoNLEase")
+
+
+# Amazon SES email sent asynchronously.
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'biostar.mailer.CeleryEmailBackend'
+CELERY_EMAIL_BACKEND = 'biostar.mailer.SSLEmailBackend'
+
+
 
 DJANGO_SETTINGS_MODULE = get_env('DJANGO_SETTINGS_MODULE', 'biostar.settings.base')
 
@@ -545,12 +553,3 @@ if __name__ == '__main__':
     print("DJANGO_SETTINGS_MODULE={}".format(DJANGO_SETTINGS_MODULE))
     print("DATABASE_NAME={}".format(DATABASE_NAME))
     print("DEFAULT_FROM_EMAIL={}".format(DEFAULT_FROM_EMAIL))
-
-
-
-# Amazon SES email sent asynchronously.
-EMAIL_USE_TLS = True
-EMAIL_BACKEND = 'biostar.mailer.CeleryEmailBackend'
-CELERY_EMAIL_BACKEND = 'biostar.mailer.SSLEmailBackend'
-AWS_ACCESS_KEY_ID = 'FZINISSZ3542DPIO32CQ'
-AWS_SECRET_ACCESS_KEY = '3Nto4vknl+xeZR+1tF3L645EUyOS+zZy/uPJ1rN'   
