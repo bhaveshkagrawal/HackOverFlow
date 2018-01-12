@@ -554,10 +554,3 @@ if __name__ == '__main__':
     print("DATABASE_NAME={}".format(DATABASE_NAME))
     print("DEFAULT_FROM_EMAIL={}".format(DEFAULT_FROM_EMAIL))
 
-
-
-# Amazon SES email sent asynchronously.
-EMAIL_USE_TLS = True
-EMAIL_BACKEND = 'biostar.mailer.CeleryEmailBackend'
-CELERY_EMAIL_BACKEND = 'biostar.mailer.SSLEmailBackend'
-
