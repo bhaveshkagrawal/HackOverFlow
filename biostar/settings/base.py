@@ -367,10 +367,10 @@ ACCOUNT_CONFIRM_EMAIL_ON_GET = True
 CAPTCHA = True
 
 # For how long does a user need to be a member to become trusted.
-TRUST_RANGE_DAYS = 7
+TRUST_RANGE_DAYS = 2
 
 # Votes needed to start trusting the user
-TRUST_VOTE_COUNT = 5
+TRUST_VOTE_COUNT = 2
 
 # How many non top level posts per day for users.
 MAX_POSTS_NEW_USER = 500
@@ -440,7 +440,7 @@ RECENT_USER_COUNT = 7
 RECENT_POST_COUNT = 12
 
 # Time between two accesses from the same IP to qualify as a different view.
-POST_VIEW_MINUTES = 5
+POST_VIEW_MINUTES = 1
 
 # Default  expiration in seconds.
 CACHE_TIMEOUT = 60
@@ -488,7 +488,7 @@ EXTERNAL_SESSION_FIELDS = "title tag_val content".split()
 COUNT_INTERVAL_WEEKS = 10000
 
 # How frequently do we update the counts for authenticated users.
-SESSION_UPDATE_SECONDS = 10 * 60
+SESSION_UPDATE_SECONDS = 2 * 60
 SESSION_COOKIE_NAME = "biostar2"
 
 # The number of posts to show per page.
