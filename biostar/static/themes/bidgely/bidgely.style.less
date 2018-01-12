@@ -1,0 +1,26 @@
+/* Import the default styles */
+@import "../../biostar.style.less";
+
+/*
+Override variable between the two imports.
+*/
+
+/* Import the default styles */
+@import "../../biostar.base.less";
+@WHITE: #FFFFFF;
+/* Overriding styles for the current setup */
+#site-logo {
+  background-color: transparent;
+  float: left;
+}
+#topnav > div {
+  &:hover {
+    background-color: @WHITE;
+  }
+}
+
+#topnav > div.active {
+  &:hover {
+    background-color: @MUTED_BACKGROUND;
+  }
+}

@@ -24,14 +24,16 @@ START_CATEGORIES = [
 ]
 
 # These should be the most frequent (or special) tags on the site.
-NAVBAR_TAGS = [
-    "RNA-Seq", "ChIP-Seq", "SNP", "Assembly",
-]
+# NAVBAR_TAGS = [
+#     "RNA-Seq", "ChIP-Seq", "SNP", "Assembly",
+# ]
+NAVBAR_TAGS = []
 
 # The last categories. These tags have special meaning internally.
-END_CATEGORIES = [
-    "Tutorials", "Tools", "Jobs", "Forum",
-]
+# END_CATEGORIES = [
+#     "Tutorials", "Tools", "Jobs", "Forum",
+# ]
+END_CATEGORIES = []
 
 # These are the tags that always show up in the tag recommendation dropdown.
 POST_TAG_LIST = NAVBAR_TAGS + ["software error"]
@@ -142,7 +144,7 @@ DATABASES = {
 TEMPLATE_STRING_IF_INVALID = "*** MISSING ***"
 
 SITE_ID = 1
-SITE_NAME = "Site Name"
+SITE_NAME = "HackOverFlow"
 SITE_DOMAIN = get_env("SITE_DOMAIN", __DEFAULT_SITE_DOMAIN)
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
@@ -420,14 +422,14 @@ GOOGLE_TRACKER = ""
 GOOGLE_DOMAIN = ""
 
 # The site logo.
-SITE_LOGO = "biostar2.logo.png"
+SITE_LOGO = "bidgely.logo.png"
 
 # Digest title
 DAILY_DIGEST_TITLE = '[biostar daily digest] %s'
 WEEKLY_DIGEST_TITLE = '[biostar weekly digest] %s'
 
 # The default CSS file to load.
-SITE_STYLE_CSS = "biostar.style.less"
+SITE_STYLE_CSS = "./themes/bidgely/bidgely.style.less"
 
 # Set it to None if all posts should be accesible via the Latest tab.
 SITE_LATEST_POST_LIMIT = None
