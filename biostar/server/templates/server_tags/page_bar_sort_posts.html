@@ -21,9 +21,9 @@
 
         <span class="step-links">
         {% if page_obj.has_previous %}
-            <a href="?page={{ page_obj.previous_page_number }}&sort={{ sort }}&limit={{ limit }}&q={{ q }}">&lt;prev</a>
+<a href="?page={{ page_obj.previous_page_number }}&sort={{ sort }}&limit={{ limit }}&q={{ q }}"><i class="fa fa-chevron-left" aria-hidden="true"></i> prev</a>
         {% else %}
-            &lt;prev
+            <i class="fa fa-chevron-left" aria-hidden="true"></i> prev
         {% endif %}
 
             <span class="current">
@@ -32,9 +32,9 @@
         </span>
 
             {% if page_obj.has_next %}
-                <a href="?page={{ page_obj.next_page_number }}&sort={{ sort }}&limit={{ limit }}&q={{ q }}">next &gt;</a>
+                <a href="?page={{ page_obj.next_page_number }}&sort={{ sort }}&limit={{ limit }}&q={{ q }}">next <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
             {% else %}
-                next &gt;
+                next <i class="fa fa-chevron-right" aria-hidden="true"></i>
             {% endif %}
         </span>
     </div>

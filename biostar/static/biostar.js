@@ -268,7 +268,10 @@ $(document).ready(function () {
         $($(this)).click(function () {
             var elem = $(this);
             var post_id = elem.parent().attr('data-post_id');
-            var vote_type = elem.attr('data-type')
+            var vote_type = elem.attr('data-type');
+            if(vote_type === undefined) {
+              return;
+            }
             ajax_vote(elem, post_id, vote_type);
         });
     });

@@ -7,11 +7,44 @@ Override variable between the two imports.
 
 /* Import the default styles */
 @import "../../biostar.base.less";
+
 @WHITE: #FFFFFF;
+@BIDGELY_BLUE: #008DC9;
+@MUTED_BACKGROUND: #eaeaea;
+@TOP_NAV_TEXT: #666666;
 /* Overriding styles for the current setup */
+a {
+   outline: 0;
+}
+#logo {
+  padding: 5px 0;
+}
 #site-logo {
   background-color: transparent;
   float: left;
+}
+
+div#navbar {
+  .top {
+    margin-bottom: 1px;
+    background-color: @BIDGELY_BLUE;
+    border-radius: 4px;
+    border: 1px solid @BIDGELY_BLUE;
+    text-align: center;
+    color: @WHITE;
+    font-size: 15px;
+    padding: 5px 10px;
+    &.login-user {
+      text-align: right;
+      a {
+        color:@WHITE;
+      }
+    }
+  }
+
+}
+#topnav {
+  margin-bottom: 10px;
 }
 #topnav > div {
   &:hover {
@@ -23,4 +56,17 @@ Override variable between the two imports.
   &:hover {
     background-color: @MUTED_BACKGROUND;
   }
+}
+
+.pagebar {
+  margin: 10px 0;
+  .text-center  {
+    padding: 5px 0;
+    .step-links {
+      font-size: 15px;
+    }
+  }
+}
+.paging-control {
+  margin:10px 0;
 }

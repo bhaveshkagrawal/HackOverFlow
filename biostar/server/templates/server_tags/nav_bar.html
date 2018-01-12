@@ -1,19 +1,6 @@
 {% load staticfiles %}
 {% load server_tags %}
 
-<div class="row visible-lg visible-md">
-    <div class="col-md-12 text-center" id="topnav">
-            {% for word in CATEGORIES %}
-                <div class="col-md-1 {% active word topic %}">
-                    <a href="{% url 'topic-list' topic=word %}">{{ word }}</a>
-                </div>
-            {% endfor %}
-            <div class="col-md-1 {% active 'planet' topic %}"><a href="{% url 'planet' %}">Planet</a></div>
-            <div class="col-md-1 {% current request 'tag-list' %}"><a href="{% url 'tag-list' %}">All &raquo;</a></div>
-        </ul>
-    </div>
-</div>
-
 <div class="row visible-sm visible-xs">
 
     <div class="col-xs-4">
@@ -28,7 +15,7 @@
                         <a href="/t/{{ word }}">{{ word }}</a>
                     </li>
                 {% endfor %}
-                <li><a href="{% url 'planet' %}">Planet</a></li>
+                <!-- <li><a href="{% url 'planet' %}">Planet</a></li> -->
                 <li><a href="{% url 'tag-list' %}">All &raquo;</a></li>
             </ul>
         </div>
@@ -97,17 +84,6 @@
 
         {% if user.is_authenticated %}
 
-            <div class="col-md-9 top {% active 'userprofile' topic %}">
-
-                <i class="fa fa-user"></i> {% userlink user %} &nbsp;|&nbsp;
-                <a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Logout </a>
-
-                <span class="pull-right">
-                    <a href="{% url 'flatpage' 'about' %}">about</a> &bull; <a href="{% url 'flatpage' 'faq' %}">faq</a>
-                    &bull; <a href="{% url 'rss' %}">rss <i class="fa fa-rss"></i></a>
-                </span>
-            </div>
-
             <div class="col-sm-1 mid {% current request 'user-list' %}">
                 <a href="{% url 'user-list' %}">
                     <div><i class="fa fa-globe"></i>
@@ -170,16 +146,19 @@
                     <div>New Post</div>
                 </a>
             </div>
+            
+            <div class="col-md-12 top login-user {% active 'userprofile' topic %}">
 
-        {% else %}
+                <i class="fa fa-user"></i> {% userlink user %} &nbsp;|&nbsp;
+                <a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Logout </a>
 
-            <div class="col-md-9 top text-center">
-                {%  include "site_description.html" %}
-                <span class="pull-right">
+                <!-- <span class="pull-right">
                     <a href="{% url 'flatpage' 'about' %}">about</a> &bull; <a href="{% url 'flatpage' 'faq' %}">faq</a>
                     &bull; <a href="{% url 'rss' %}">rss <i class="fa fa-rss"></i></a>
-                </span>
+                </span> -->
             </div>
+
+        {% else %}
 
             <div class="col-md-2 col-md-offset-10 mid {% current request 'user-list' %}">
                 <a href="{% url 'user-list' %}">
@@ -209,7 +188,26 @@
                     <div>Add New Post</div>
                 </a>
             </div>
-
+            
+            <div class="col-md-12 top text-center">
+                {%  include "site_description.html" %}
+                <!-- <span class="pull-right">
+                    <a href="{% url 'flatpage' 'about' %}">about</a> &bull; <a href="{% url 'flatpage' 'faq' %}">faq</a>
+                    &bull; <a href="{% url 'rss' %}">rss <i class="fa fa-rss"></i></a>
+                </span> -->
+            </div>
         {% endif %}
+    </div>
+</div>
+<div class="row visible-lg visible-md">
+    <div class="col-md-12 text-center" id="topnav">
+            {% for word in CATEGORIES %}
+                <div class="col-md-1 {% active word topic %}">
+                    <a href="{% url 'topic-list' topic=word %}">{{ word }}</a>
+                </div>
+            {% endfor %}
+            <!-- <div class="col-md-1 {% active 'planet' topic %}"><a href="{% url 'planet' %}">Planet</a></div> -->
+            <div class="col-md-1 {% current request 'tag-list' %}"><a href="{% url 'tag-list' %}">All &raquo;</a></div>
+        </ul>
     </div>
 </div>

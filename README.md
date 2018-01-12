@@ -1,4 +1,4 @@
-## HackOverFlow: Building Scientific Communities
+## HackOverFlow: Building Communities
 
 [![Build Status][build-image]][build-url] 
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
@@ -6,16 +6,11 @@
 [build-image]: https://travis-ci.org/ialbert/biostar-central.svg?branch=4.0
 [build-url]: https://travis-ci.org/ialbert/biostar-central/builds
 
-BioStar is a [Python][python] and [Django][django] based Q&A software.
+HackOverFlow is a [Python][python] and [Django][django] based Q&A software.
 It is a simple, generic, flexible and extensible Q&A framework.
 
-The site has been developed by **scientists and for scientists**. It aims
-to address the requirements and needs that scientific communities have.
-Biostar is used to run several science oriented Q&A sites:
-
- * Biostars Bioinformatics Q&A at: https://www.biostars.org
- * Galaxy User Support: https://biostar.usegalaxy.org
- * Bioconductor User Support: https://support.bioconductor.org/
+The site has been developed by Bidgely employees for internal and client usage. It aims
+to address the requirements and needs that people have.
 
 The software is open source and free to use under the MIT License.
 
@@ -42,7 +37,7 @@ The source for the documentation can be found in  the [docs](./docs) folder.
 
 ### Quick Start
 
-From the biostar source directory:
+From the HackOverFlow source directory:
 
     # Install the requirements.
     pip install --upgrade -r conf/requirements/base.txt
