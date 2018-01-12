@@ -156,6 +156,14 @@ function title_format(row) {
     return link
 }
 
+function validateEmail(sEmail) {
+  var filter = /^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(bidgely)\.com$/;
+  if (filter.test(sEmail)) {
+    return true;
+  } else {
+    return false;
+  }
+}
 $(document).ready(function () {
     var tooltip_options = {};
 
@@ -264,7 +272,6 @@ $(document).ready(function () {
 
     // Vote submission.
     $('.vote').each(function () {
-
         $($(this)).click(function () {
             var elem = $(this);
             var post_id = elem.parent().attr('data-post_id');
@@ -275,6 +282,48 @@ $(document).ready(function () {
             ajax_vote(elem, post_id, vote_type);
         });
     });
-
+    $( "#signup_form" ).submit(function( event ) {
+      var email = $("#id_email").val();
+      var pass1 = $("#id_password1").val();
+      var pass2 = $("#id_password2").val();
+      //validate email
+      if(validateEmail(email)){
+        return true;
+      } else {
+        var msg = "Your email address must be in the format of username@bidgely.com.";
+        if(email.length == 0) {
+          msg = "This field is required.";
+        }
+        $("#div_id_email").addClass("has-error");
+        if($("#error_id_email").length > 0) {
+          $("#error_id_email").remove();
+        }
+        $("#div_id_email").append('<p id="error_id_email" class="help-block"><strong>'+msg+'</strong></p>');
+      }
+      //validate passwords
+      if(pass1.length == 0 || pass1.length < 6) {
+        var passwordErrorMsg = "Password must be a minimum of 6 characters.";
+        if(pass1.length == 0) {
+          passwordErrorMsg = "This field is required.";
+        }
+        $("#div_id_password1").addClass("has-error");
+        if($("#error_id_password1").length > 0) {
+          $("#error_id_password1").remove();
+        }
+        $("#div_id_password1").append('<p id="error_id_password1" class="help-block"><strong>'+passwordErrorMsg+'</strong></p>');
+      }
+      if(pass2.length == 0 || pass2.length < 6) {
+        var password2ErrorMsg = "Password must be a minimum of 6 characters.";
+        if(pass1.length == 0) {
+          password2ErrorMsg = "This field is required.";
+        }
+        $("#div_id_password2").addClass("has-error");
+        if($("#error_id_password2").length > 0) {
+          $("#error_id_password2").remove();
+        }
+        $("#div_id_password2").append('<p id="error_id_password2" class="help-block"><strong>'+password2ErrorMsg+'</strong></p>');
+      }
+      event.preventDefault();
+    });
 })
 ;
