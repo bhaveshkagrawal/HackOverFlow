@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//biostar/apps/badges/migrations/0001_initial.py=utf-8
+encoding//biostar/settings/base.py=utf8
+encoding//biostar/settings/debug.py=utf8
+encoding//biostar/settings/selenium.py=utf8
+encoding//biostar/settings/test_travis.py=utf8
