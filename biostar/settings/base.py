@@ -526,8 +526,8 @@ SESSION_KEY = "session"
 # On deployed servers the following must be set.
 EMAIL_HOST = get_env("EMAIL_HOST", "email-smtp.us-west-2.amazonaws.com")
 EMAIL_PORT = get_env("EMAIL_PORT", default=25, func=int)
-EMAIL_HOST_USER = get_env("EMAIL_HOST_USER", "AKIAJ4V55W5CWZH3ZA7Q")
-EMAIL_HOST_PASSWORD = get_env("EMAIL_HOST_PASSWORD", "AltnewcJBBPUYDHJ/MryIzEYnuzJmUZYMgYLKoNLEase")
+EMAIL_HOST_USER = get_env("EMAIL_HOST_USER", "")
+EMAIL_HOST_PASSWORD = get_env("EMAIL_HOST_PASSWORD", "")
 
 
 # Amazon SES email sent asynchronously.
