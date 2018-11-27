@@ -24,7 +24,7 @@ Jinja2==2.7.3
 kombu==3.0.19
 langdetect==1.0.5
 Markdown==2.4.1
-markdown2==2.3.5
+markdown2==2.3.7
 MarkupSafe==0.23
 oauthlib==0.6.3
 ordereddict==1.1
@@ -33,7 +33,7 @@ pyparsing==2.0.2
 python-openid==2.2.5
 pytz==2014.4
 pyzmail==1.0.3
-requests==2.3.0
+requests==2.20.0
 requests-oauthlib==0.4.1
 six==1.7.2
 South==0.8.4
